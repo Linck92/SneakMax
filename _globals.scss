@@ -1,0 +1,49 @@
+body {
+    @include fluid-text(16, 14); // Посмотрели значение по <p/> в макете для мобильной и десктопной версии
+
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--gray-dark);
+    background-color: var(--color-light);
+}
+
+a,
+input,
+button,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+fieldset {
+    margin-right: 0;
+}
+
+legend {
+    padding-inline: 0;
+}
+
+
+/*Смотрим значения по макету, max - это для десктопной версии, min - для мобильной*/
+h1 {
+    @include fluid-text(36, 24);
+    font-weight: 400;
+}
+h2 {
+    @include fluid-text(30, 20);
+    font-weight: 700;
+}
+h3 {
+    @include fluid-text(24, 18);
+    font-weight: 400;
+}
+h4 {                        
+    @include fluid-text(20, 14);
+    font-weight: 400;
+}

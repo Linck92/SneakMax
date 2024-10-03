@@ -1,0 +1,79 @@
+.questions {
+    display: flex;
+    flex-direction: column;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 880px;
+            row-gap: 30px;
+        }
+    
+        &__accordion {
+            --indicatorVerticalRotate: 90deg;
+    
+            padding: 20px 30px;
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            transition-duration: var(--transition-duration);
+    
+            &[open] {
+
+                --indicatorVerticalRotate: 0deg;
+    
+            }
+    
+            &-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 50px;
+                cursor: pointer;
+                user-select: none;
+
+    
+                @include mobile {
+                    column-gap: 28px;
+                }
+            }
+    
+            &-title {
+    
+                display: flex;
+                align-items: center;
+                column-gap: 25px;
+    
+            }
+    
+            &-indicator {
+                @include flex-center;
+                @include square(58px);
+    
+                flex-shrink: 0;
+                position: relative; // Чтобы правильно спозиционировать псевдоэлемент
+                border-radius: 50%;
+    
+                &::before,
+                &::after {
+                    content: '';
+                    @include abs-center;
+    
+                    width: 45%;
+                    height: 10%;
+                    background-color: var(--gray-dark);
+                }
+    
+                &::after {
+                    rotate: var(--indicatorVerticalRotate);
+                    transition-duration: var(--transition-duration);
+                }
+            }
+    
+            &-body {
+                margin-top: 30px;
+                padding-top: 30px;
+                border-top: 1px solid var(--gray);
+            }
+        }
+}

@@ -1,0 +1,48 @@
+.button {
+
+    padding: 22px 47px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--coral);
+    color: white;
+    height: var(--button-height);
+    cursor: pointer;
+
+    @include hover {
+        background-color: var(--coral-hover);
+    }
+
+    &--light-small {
+        background-color: transparent;
+        border: 1px solid var(--gray-dark);
+        color: var(--gray-dark);
+        height: var(--button-height-small);
+        padding: 18px 42px;
+
+
+
+        @include hover {
+            background-color: var(--gray-dark);
+            color: white;
+        }
+    }
+
+    &--dark {
+        background-color: var(--gray-dark);
+        color: white;
+
+        @include hover {
+            background-color: var(--gray-dark-hover);
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        color: var(--gray-dark);
+
+        @include hover {
+            color: var(--coral);
+            background-color: inherit;
+        }
+    }
+}

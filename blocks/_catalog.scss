@@ -1,0 +1,181 @@
+
+.catalog {
+    display: flex;
+    flex-direction: column;
+
+    &__inner {
+        display: flex;
+        align-items: start;
+        gap: 20px;
+    }
+
+    &__filter {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 280px;
+        background-color: var(--pink);
+        border-radius: var(--radius);
+        padding: 20px;
+
+        &-price {
+
+            &-outputs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: 1px solid var(--gray);
+                border-bottom: none;
+                border-radius: var(--radius) var(--radius) 0 0;
+
+                output {
+                    padding: 17px 35px;
+                    height: 34px;
+                    width: 100%;
+
+                    &:first-child {
+                        border-right: 1px solid var(--gray);
+                    }
+                }
+            }
+
+            &-inputs {
+                display: flex;
+                align-items: center;
+
+                input {
+                    width: 100%;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    background-color: var(--gray-dark);
+                    height: 2px;
+
+                    &::-webkit-slider-thumb {
+                        width: 5px;
+                        height: 20px;
+                        background-color: var(--gray-dark);
+                        -webkit-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                        border-radius: var(--radius);
+                    }
+                    
+                }
+                
+            }
+
+        }
+
+        &-gender {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+
+            .checkbox-emulator-gender {
+                display: inline-block;
+                @include square(24px);
+                border: 2px solid #DBBBA9;
+                border-radius: var(--radius);
+                position: relative;
+                
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 4px;
+                    left: 3px;
+                }
+            }
+            
+            input {
+                &:checked + .checkbox-emulator-gender::after {
+                    content: url(icons/V.svg);
+                }
+            }
+           
+        }
+
+        legend {
+            margin-bottom: 10px;
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        &-sizes {
+            display: flex;
+            flex-wrap: wrap;
+
+            label {
+                width: 79px;
+                height: 57px;
+                border-left: 1px solid #DBBBA9;
+                border-top: 1px solid #DBBBA9;
+                cursor: pointer;
+
+                &:last-child {
+                    border-right: 1px solid #DBBBA9;
+                    border-bottom: 1px solid #DBBBA9;
+                }
+
+                &:nth-child(3), &:nth-child(6) {
+                    border-right: 1px solid #DBBBA9;
+                }
+
+                &:nth-child(7), &:nth-child(8) {
+                    border-bottom: 1px solid #DBBBA9;
+                }
+            }
+
+            .checkbox-emulator {
+                @include flex-center;
+                width: 100%;
+                height: 100%;
+            }
+
+            input {
+                &:checked + .checkbox-emulator {
+                    background-color: #fcd7c2;
+                }
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+
+        &-price {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}

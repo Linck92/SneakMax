@@ -1,0 +1,35 @@
+:root {
+
+    // Colors
+    --violet: #484283;
+    --pink: #FFF4EE;
+    --gray: #B2B5BB;
+    --gray-dark: #444B58;
+    --gray-dark-hover: #31343C;
+    --coral: #F14F4F;
+    --coral-hover: #CC4949;
+    --check-box: #DBBBA9;
+
+    --radius: 4px;
+
+    --font-family-base: 'Intro', sans-serif;
+
+    --container-width: 1180px;
+    --container-padding-x: 16px; /*Значение в мобильной версии*/
+
+    --section-padding-y: 60px;
+
+    --button-height: 60px;
+    --button-height-small: 50px;
+
+    --transition-duration: 0.3s;
+
+    @include desktop {
+        --section-padding-y: 45px;
+    }
+    
+    @include mobile {
+        --section-padding-y: 30px;
+    }
+    
+}

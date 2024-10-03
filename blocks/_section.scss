@@ -1,0 +1,27 @@
+.section {
+    padding-block: var(--section-padding-y);
+}
+
+.section.bg-violet {
+    background-color: var(--violet);
+    color: white;
+}
+.section.bg-gray {
+    background-color: #F3F6F6;
+}
+
+
+
+.section.without-padding-block {
+    padding-block: 0;
+    position: relative;
+}
+
+.section .bg-text {
+    position: absolute;
+    @include fluid-text(200, 150);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.12);
+    left: 5%;
+    top: 15%;
+}

@@ -1,0 +1,67 @@
+.header {
+    background-color: var(--violet);
+    color: white;
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &__logo {
+        font-size: 30px;
+        font-weight: 700;
+        
+        @include hover {
+            color: var(--coral);
+        }
+    }
+
+    &__menu {
+
+        &-list{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        &-item {
+            &:last-child {
+                svg *[fill] { fill: currentColor }
+                svg *[stroke] { stroke: currentColor }
+                
+                @include hover {
+                    color: var(--coral);
+                }
+            }
+        }
+
+        &-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 0;
+                left: 0;
+                top: 100%;
+                background-color: white;
+                transition-duration: 0.4s;
+            }
+
+            @include hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+}
